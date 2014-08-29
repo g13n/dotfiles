@@ -1,0 +1,27 @@
+! Rxvt Unicode
+
+URxvt*background: white
+URxvt*cursorColor: black
+URxvt*font: xft:Ubuntu Mono-13
+URxvt*foreground: black
+URxvt*loginShell: true
+! Hide pointer while typing
+URxvt*pointerBlank: true
+URxvt*saveLines: 1000
+URxvt*scrollBar: false
+URxvt*termName: xterm-color
+! Selection extends only until logical line end
+URxvt*tripleclickwords: true
+URxvt*visualBell: true
+
+! XTerm
+
+!XTerm*background: rgb:27/28/22
+!XTerm*foreground: rgb:f8/f8/f2
+XTerm*faceName: Ubuntu Mono
+XTerm*faceSize: 11
+XTerm*loginShell: true
+XTerm*saveLines: 16384
+XTerm*rightScrollBar: true
+XTerm*scrollBar: true
+XTerm*selectToClipboard: true

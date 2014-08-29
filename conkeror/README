@@ -1,0 +1,4 @@
+Link this directory as your $HOME/.conkerorrc.
+
+On Windows you may need to copy this as a new folder, or better still set the
+Conkeror RC preferences using about:config.

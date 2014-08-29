@@ -1,0 +1,32 @@
+#!/bin/sh
+
+set_theme_colors() {
+    gconftool-2 --set "/apps/gnome-terminal/profiles/Default/background_color" --type string $1
+    gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string $2
+}
+
+usage_exit() {
+    echo "usage: $1 {tango|tango-dark|subatomic|subatomic256|brackets}" 1>&2
+    exit 1
+}
+
+if [ $# -ne 1 ]; then
+    usage_exit $0
+fi
+
+case $1 in
+    tango-dark) set_theme_colors "#2e3436" "#eeeeec"
+	;;
+    tango) set_theme_colors "#eeeeec" "#2e3436"
+	;;
+    subatomic) set_theme_colors "#303347" "#e5e5e5"
+	;;
+    subatomic256) set_theme_colors "#1c1c1c" "#d7d7d7"
+	;;
+    monokai) set_theme_colors "#272822" "#f8f8f2"
+	;;
+    brackets) set_theme_colors "#f8f8f8" "#000000"
+	;;
+    *) usage_exit $0
+	;;
+esac
