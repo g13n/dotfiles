@@ -181,10 +181,8 @@
 ;; ----------------------------------------------------------------------------
 
 ;; C/C++
-(c-add-style "g13n"
-             '("stroustrup"
-               (indent-tabs-mode . nil)))
-(setq c-default-style "g13n")
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 ;; JavaScript
 (autoload 'js2-mode "js2-mode" nil t)
@@ -246,7 +244,8 @@
 (if window-system
     (progn
       (global-font-lock-mode t)
-      (set-default-font (font-candidate "Source Code Pro-11"
+      (set-default-font (font-candidate "Droid Sans Mono-12"
+					"Source Code Pro-11"
 					"Ubuntu Mono-13"
 					"Consolas-13")))
   (global-font-lock-mode nil))
