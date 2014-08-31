@@ -27,6 +27,8 @@ case $1 in
 	;;
     brackets) set_theme_colors "#f8f8f8" "#000000"
 	;;
+    white) set_theme_colors "white" "black"
+	;;
     *) usage_exit $0
 	;;
 esac

@@ -240,13 +240,17 @@
 ;; UI customisation
 ;; ----------------------------------------------------------------------------
 
+;; Never blink cursor, its annoying
+(blink-cursor-mode -1)
+
 ;; Set the font-size according to the screen resolution
 (if window-system
     (progn
       (global-font-lock-mode t)
-      (set-default-font (font-candidate "Droid Sans Mono-12"
-					"Source Code Pro-11"
+      (set-default-font (font-candidate "Source Code Pro-11"
 					"Ubuntu Mono-13"
+					"Inconsolata-13"
+					"Droid Sans Mono-12"
 					"Consolas-13")))
   (global-font-lock-mode nil))
 
