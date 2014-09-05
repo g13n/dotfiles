@@ -247,8 +247,8 @@
 (if window-system
     (progn
       (global-font-lock-mode t)
-      (set-default-font (font-candidate "Source Code Pro-11"
-					"Ubuntu Mono-13"
+      (set-default-font (font-candidate "Ubuntu Mono-13"
+					"Source Code Pro-13"
 					"Inconsolata-13"
 					"Droid Sans Mono-12"
 					"Consolas-13")))
