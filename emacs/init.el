@@ -190,7 +190,9 @@
       (cons '("\\.\\(js\\|jsx\\)\\'" . js2-mode)
 	    auto-mode-alist))
 (add-hook 'js2-mode-hook
-          (lambda () (setq indent-tabs-mode nil)))
+          (lambda ()
+	    (setq indent-tabs-mode nil
+		  js2-basic-offset 2)))
 
 ;; nXML - XML editing
 (load-library "nxml-mode")
@@ -198,11 +200,11 @@
       (cons '("\\.\\(html\\|xml\\|xsl\\|rng\\|xhtml\\)\\'" . nxml-mode)
             auto-mode-alist))
 (defun custom-nxml ()
-  (setq nxml-child-indent 4)
+  (setq nxml-child-indent 2)
   (setq nxml-slash-auto-complete-flag t)
   (setq indent-tabs-mode nil)
-  (nxml-bind-meta-tab-to-complete-flag t)
-  (nxml-slash-auto-complete-flag t)
+  (setq nxml-bind-meta-tab-to-complete-flag t)
+  (setq nxml-slash-auto-complete-flag t)
   (unify-8859-on-decoding-mode)
   (auto-fill-mode -1))
 (add-hook 'nxml-mode-hook 'custom-nxml)
@@ -247,8 +249,8 @@
 (if window-system
     (progn
       (global-font-lock-mode t)
-      (set-default-font (font-candidate "Ubuntu Mono-13"
-					"Source Code Pro-13"
+      (set-default-font (font-candidate "Source Code Pro-13"
+					"Ubuntu Mono-13"
 					"Inconsolata-13"
 					"Droid Sans Mono-12"
 					"Consolas-13")))
