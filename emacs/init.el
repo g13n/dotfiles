@@ -332,4 +332,4 @@
 
 (eval-after-load 'rcirc '(require 'rcirc-notify))
 
-(load-theme 'radiance)
+(load-theme 'solarized-light)
