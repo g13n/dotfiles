@@ -3,11 +3,11 @@ gconftool-2 --set /apps/gnome-terminal/profiles/Default/cursor_blink_mode --type
 gconftool-2 --set /apps/gnome-terminal/profiles/Default/cursor_shape --type string block
 
 # use login shell
-gconftool-2 --set /apps/gnome-terminal/profiles/Default/login_shell true
+gconftool-2 --set /apps/gnome-terminal/profiles/Default/login_shell --type boolean true
 
-gconftool-2 --set /apps/gnome-terminal/profiles/Default/scrollback_lines 10000
+gconftool-2 --set /apps/gnome-terminal/profiles/Default/scrollback_lines --type int 10000
 
-gconftool-2 --set /apps/gnome-terminal/keybindings/copy "<Alt>w"
-gconftool-2 --set /apps/gnome-terminal/keybindings/paste "<Primary>y"
+gconftool-2 --set /apps/gnome-terminal/keybindings/copy --type string "<Alt>w"
+gconftool-2 --set /apps/gnome-terminal/keybindings/paste --type string "<Primary>y"
 
 sh ./gnome-terminal-solarized/set_light.sh
