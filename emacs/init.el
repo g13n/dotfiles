@@ -111,7 +111,7 @@
       scroll-preserve-screen-position 1)
 
 ;; Push the mouse out of the way when the cursor approaches.
-(mouse-avoidance-mode 'jump)
+(mouse-avoidance-mode 'animate)
 
 ;; I use sentences.  Like this.
 (setq sentence-end-double-space t)
@@ -173,8 +173,7 @@
 ;; Customize additional module libraries
 ;; ----------------------------------------------------------------------------
 
-;(require 'helm-config)
-;(helm-mode 1)
+(require 'autopair)
 
 ;; ----------------------------------------------------------------------------
 ;; Load all sub modules
@@ -183,6 +182,7 @@
 ;; C/C++
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+(add-hook 'c-mode-common-hook #'(lambda () (autopair-mode)))
 
 ;; JavaScript
 (autoload 'js2-mode "js2-mode" nil t)
@@ -191,6 +191,7 @@
 	    auto-mode-alist))
 (add-hook 'js2-mode-hook
           (lambda ()
+	    (autopair-mode)
 	    (setq indent-tabs-mode nil
 		  js2-basic-offset 2)))
 
@@ -206,7 +207,8 @@
   (setq nxml-bind-meta-tab-to-complete-flag t)
   (setq nxml-slash-auto-complete-flag t)
   (unify-8859-on-decoding-mode)
-  (auto-fill-mode -1))
+  (auto-fill-mode -1)
+  (autopair-mode))
 (add-hook 'nxml-mode-hook 'custom-nxml)
 
 ;; Org Mode
@@ -332,4 +334,4 @@
 
 (eval-after-load 'rcirc '(require 'rcirc-notify))
 
-(load-theme 'solarized-light)
+;(load-theme 'solarized-light)
