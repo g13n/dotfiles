@@ -173,7 +173,22 @@
 ;; Customize additional module libraries
 ;; ----------------------------------------------------------------------------
 
+;; Package sources
+(if (>= (string-to-number emacs-version) 24)
+    (progn
+      (require 'package)
+      (add-to-list 'package-archives
+		   '("melpa" . "http://melpa.milkbox.net/packages/") t)
+      (package-initialize)))
+
 (require 'autopair)
+
+;; Interactively Do Things
+(setq ido-enable-flex-matching t
+      ido-everywhere t
+      ido-use-filename-at-point 'guess
+      ido-create-new-buffer 'always)
+(ido-mode 1)
 
 ;; ----------------------------------------------------------------------------
 ;; Load all sub modules
@@ -240,6 +255,8 @@
 (require 'saveplace)
 (setq-default save-place t)
 
+(put 'dired-find-alternate-file 'disabled nil)
+
 ;; ----------------------------------------------------------------------------
 ;; UI customisation
 ;; ----------------------------------------------------------------------------
@@ -292,6 +309,7 @@
       (add-to-list 'custom-theme-load-path (expand-file-name "~/src/build/tomorrow-theme/GNU Emacs"))
       (add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/themes/color-theme-radiance"))
       ))
+;(load-theme 'solarized-light)
 
 ;; RCIRC
 (require 'tls)
@@ -309,14 +327,8 @@
 	 ))
 	)
 
-;; Package sources
-(if (>= (string-to-number emacs-version) 24)
-    (progn
-      (require 'package)
-      (add-to-list 'package-archives
-		   '("melpa" . "http://melpa.milkbox.net/packages/") t)
-      (package-initialize)
-      ))
+(eval-after-load 'rcirc '(require 'rcirc-notify))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -329,9 +341,3 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-(put 'dired-find-alternate-file 'disabled nil)
-
-(eval-after-load 'rcirc '(require 'rcirc-notify))
-
-;(load-theme 'solarized-light)
