@@ -1,14 +1,10 @@
-;; ----------------------------------------------------------------------------
-;; This is divided into three sections.
-;;
-;; The first section sets and modifies Emacs directly, invoking and tweaking
-;; packages and settings that come with your vanilla Emacs CVS, such as
-;; scrolling or changing key bindings.
-;;
-;; The second section loads all my downloaded elisp files, and sets them up.
-;;
-;; The third section contains the customised settings.
-;; ----------------------------------------------------------------------------
+;; Package sources
+(if (>= (string-to-number emacs-version) 24)
+    (progn
+      (require 'package)
+      (add-to-list 'package-archives
+		   '("melpa" . "http://melpa.milkbox.net/packages/") t)
+      (package-initialize)))
 
 ;; ----------------------------------------------------------------------------
 ;; Utility methods
@@ -173,14 +169,6 @@
 ;; Customize additional module libraries
 ;; ----------------------------------------------------------------------------
 
-;; Package sources
-(if (>= (string-to-number emacs-version) 24)
-    (progn
-      (require 'package)
-      (add-to-list 'package-archives
-		   '("melpa" . "http://melpa.milkbox.net/packages/") t)
-      (package-initialize)))
-
 (require 'autopair)
 
 ;; Interactively Do Things
@@ -198,6 +186,20 @@
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 (add-hook 'c-mode-common-hook #'(lambda () (autopair-mode)))
+
+;; Java
+(defun malabar-mode-bootstrap ()
+  (require 'cedet)
+  (require 'semantic)
+  (load "semantic/loaddefs.el")
+  (semantic-mode 1);;
+  (require 'malabar-mode)
+  (load "malabar-flycheck")
+
+  (malabar-mode)
+  (flycheck-mode))
+
+(add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode-bootstrap))
 
 ;; JavaScript
 (autoload 'js2-mode "js2-mode" nil t)
@@ -242,6 +244,10 @@
 ;; Tramp - Transparent access to remote systems
 (require 'tramp)
 
+;; YASnippet
+(require 'yasnippet)
+(yas-global-mode 1)
+
 ;; Load some utilities
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/utils"))
 (require 'phonetic)
@@ -268,8 +274,10 @@
 (if window-system
     (progn
       (global-font-lock-mode t)
-      (set-default-font (font-candidate "Source Code Pro-13"
-					"Ubuntu Mono-13"
+      (set-default-font (font-candidate "Ubuntu Mono-12"
+					"PT Mono-11"
+					"Anonymous Pro-11"
+					"Source Code Pro-13"
 					"Inconsolata-13"
 					"Droid Sans Mono-12"
 					"Consolas-13")))
