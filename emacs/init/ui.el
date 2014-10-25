@@ -74,6 +74,3 @@
 ;; This is very useful for large files.
 (require 'saveplace)
 (setq-default save-place t)
-
-;; My default theme
-(load-theme 'niflheim)
