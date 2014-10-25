@@ -52,13 +52,13 @@
 (if window-system
     (progn
       (global-font-lock-mode t)
-      (set-default-font (font-candidate "Ubuntu Mono-12"
+      (set-default-font (font-candidate "Ubuntu Mono-11"
+					"Consolas-11"
+					"Source Code Pro-12"
 					"PT Mono-11"
 					"Anonymous Pro-11"
-					"Source Code Pro-13"
 					"Inconsolata-13"
-					"Droid Sans Mono-12"
-					"Consolas-13")))
+					"Droid Sans Mono-12")))
   (global-font-lock-mode nil))
 
 ;; Get rid of the menu, toolbar since I like a plain looking screen.
