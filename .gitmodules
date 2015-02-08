@@ -1,3 +1,6 @@
 [submodule "X/gnome-terminal-solarized"]
 	path = X/gnome-terminal-solarized
 	url = git@github.com:Anthony25/gnome-terminal-colors-solarized.git
+[submodule "emacs/init/snippets"]
+	path = emacs/init/snippets
+	url = git@github.com:AndreaCrotti/yasnippet-snippets.git
