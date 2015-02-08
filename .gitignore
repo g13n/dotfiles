@@ -3,3 +3,7 @@ emacs/.emacs.desktop.lock
 emacs/auto-save-list/
 emacs/savehist
 
+/emacs/ido.last
+/emacs/places
+/emacs/projectile-bookmarks.eld
+/emacs/session.10bcf9a13abe67b872142336113685011800000019980044
