@@ -19,7 +19,7 @@
 ;; Show FIXME/TODO/BUG/KLUDGE comments
 (require 'fic-mode)
 (add-hook 'c++-mode-hook 'turn-on-fic-mode)
-(add-hook 'js3-mode-hook 'turn-on-fic-mode)
+(add-hook 'js2-mode-hook 'turn-on-fic-mode)
 
 ;; Java
 (defun malabar-mode-bootstrap ()
@@ -36,15 +36,13 @@
 	     '("\\.java\\'" . malabar-mode-bootstrap))
 
 ;; JavaScript
-(autoload 'js3-mode "js3-mode" nil t)
+(autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist
-	     '("\\.\\(js\\|jsx\\)\\'" . js3-mode))
-(add-hook 'js3-mode-hook
+	     '("\\.\\(js\\|jsx\\)\\'" . js2-mode))
+(add-hook 'js2-mode-hook
           (lambda ()
 	    (setq indent-tabs-mode nil
-		  js3-auto-indent-p t
-		  js3-enter-indents-newline t
-		  js3-indent-on-enter-key t)))
+		  js2-basic-offset 2)))
 
 ;; nXML - XML editing
 (autoload 'nxml-mode "nxml-mode")
