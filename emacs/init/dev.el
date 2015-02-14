@@ -12,6 +12,15 @@
 	  #'(lambda ()
 	      (electric-pair-mode t)))
 
+;; Comments
+(global-set-key (kbd "M-;") 'comment-dwim-2)
+(setq comment-dwim-2--inline-comment-behavior 'reindent-comment)
+
+;; Show FIXME/TODO/BUG/KLUDGE comments
+(require 'fic-mode)
+(add-hook 'c++-mode-hook 'turn-on-fic-mode)
+(add-hook 'js3-mode-hook 'turn-on-fic-mode)
+
 ;; Java
 (defun malabar-mode-bootstrap ()
   (require 'cedet)
@@ -27,13 +36,15 @@
 	     '("\\.java\\'" . malabar-mode-bootstrap))
 
 ;; JavaScript
-(autoload 'js2-mode "js2-mode" nil t)
+(autoload 'js3-mode "js3-mode" nil t)
 (add-to-list 'auto-mode-alist
-	     '("\\.\\(js\\|jsx\\)\\'" . js2-mode))
-(add-hook 'js2-mode-hook
+	     '("\\.\\(js\\|jsx\\)\\'" . js3-mode))
+(add-hook 'js3-mode-hook
           (lambda ()
 	    (setq indent-tabs-mode nil
-		  js2-basic-offset 2)))
+		  js3-auto-indent-p t
+		  js3-enter-indents-newline t
+		  js3-indent-on-enter-key t)))
 
 ;; nXML - XML editing
 (autoload 'nxml-mode "nxml-mode")
@@ -84,3 +95,6 @@
 ;; Code Snippets!
 (require 'yasnippet)
 (yas-global-mode 1)
+
+;; Project modes
+(projectile-global-mode t)

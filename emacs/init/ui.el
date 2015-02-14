@@ -47,6 +47,8 @@
 
 ;; Never blink cursor, its annoying
 (blink-cursor-mode -1)
+(setq-default cursor-type 'hbar)
+
 
 ;; Set the font-size according to the screen resolution
 (if window-system
