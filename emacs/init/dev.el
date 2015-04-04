@@ -29,18 +29,18 @@
 (add-hook 'js2-mode-hook 'turn-on-fic-mode)
 
 ;; Java
-(defun malabar-mode-bootstrap ()
-  (require 'cedet)
-  (require 'semantic)
-  (load "semantic/loaddefs.el")
-  (semantic-mode 1);;
-  (require 'malabar-mode)
-  (load "malabar-flycheck")
-  (malabar-mode)
-  (flycheck-mode))
+;; (defun malabar-mode-bootstrap ()
+;;   (require 'cedet)
+;;   (require 'semantic)
+;;   (load "semantic/loaddefs.el")
+;;   (semantic-mode 1);;
+;;   (require 'malabar-mode)
+;;   (load "malabar-flycheck")
+;;   (malabar-mode)
+;;   (flycheck-mode))
 
-(add-to-list 'auto-mode-alist
-	     '("\\.java\\'" . malabar-mode-bootstrap))
+;; (add-to-list 'auto-mode-alist
+;; 	     '("\\.java\\'" . malabar-mode-bootstrap))
 
 ;; JavaScript
 (autoload 'js2-mode "js2-mode" nil t)
@@ -96,10 +96,6 @@
 
 ;; Tramp - Transparent access to remote systems
 (require 'tramp)
-
-;; Code Snippets!
-(require 'yasnippet)
-(yas-global-mode 1)
 
 ;; Project modes
 (projectile-global-mode t)

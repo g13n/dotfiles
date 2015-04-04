@@ -60,7 +60,7 @@
 					"Anonymous Pro-11"
 					"Inconsolata-13"
 					"Droid Sans Mono-12"))
-      (load-theme 'niflheim))
+      (load-theme 'solarized-light))
   (global-font-lock-mode nil))
 
 ;; Get rid of the menu, toolbar since I like a plain looking screen.

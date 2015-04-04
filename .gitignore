@@ -1,9 +1,11 @@
-emacs/.emacs.desktop
-emacs/.emacs.desktop.lock
+.emacs.desktop
 emacs/auto-save-list/
 emacs/savehist
 
 /emacs/ido.last
 /emacs/places
-/emacs/projectile-bookmarks.eld
-/emacs/session.10bcf9a13abe67b872142336113685011800000019980044
+projectile-bookmarks.eld
+/emacs/session*
+/emacs/.#places
+/emacs/elpa/archives/gnu/archive-contents~
+/emacs/elpa/archives/melpa/archive-contents~

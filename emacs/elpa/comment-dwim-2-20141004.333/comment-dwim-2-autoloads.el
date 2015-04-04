@@ -3,9 +3,34 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "comment-dwim-2" "comment-dwim-2.el" (21719
-;;;;;;  55918 532708 131000))
+;;;### (autoloads (comment-dwim-2) "../../../src/projects/dotfiles/emacs/elpa/comment-dwim-2-20141004.333/comment-dwim-2"
+;;;;;;  "comment-dwim-2.el" "ac2cfe0ec26c9563085412ed1538a615")
 ;;; Generated autoloads from comment-dwim-2.el
+
+(autoload 'comment-dwim-2 "../../../src/projects/dotfiles/emacs/elpa/comment-dwim-2-20141004.333/comment-dwim-2" "\
+Call a comment command according to the context.
+
+If the region is active, call `comment-or-uncomment-region' to
+toggle comments.
+Else, the function applies to the current line and calls a
+different function at each successive call. The behavior is:
+* First  call : Toggle line commenting
+* Second call : - Kill inline comment if one is present (1)
+                - Insert inline comment otherwise
+Given an argument, it reindents the inline comment instead (2).
+
+Please note that the behavior of `comment-dwim-2' when
+encountering an inline comment can be customized. Setting
+`comment-dwim-2--inline-comment-behavior' to 'reindent-comment
+will swap (1) and (2).
+
+\(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads (comment-dwim-2) "comment-dwim-2" "../../../../../../.emacs.d/elpa/comment-dwim-2-20141004.333/comment-dwim-2.el"
+;;;;;;  "ac2cfe0ec26c9563085412ed1538a615")
+;;; Generated autoloads from ../../../../../../.emacs.d/elpa/comment-dwim-2-20141004.333/comment-dwim-2.el
 
 (autoload 'comment-dwim-2 "comment-dwim-2" "\
 Call a comment command according to the context.
@@ -25,6 +50,14 @@ encountering an inline comment can be customized. Setting
 will swap (1) and (2).
 
 \(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../../../.emacs.d/elpa/comment-dwim-2-20141004.333/comment-dwim-2-autoloads.el"
+;;;;;;  "../../../../../../.emacs.d/elpa/comment-dwim-2-20141004.333/comment-dwim-2-pkg.el"
+;;;;;;  "../../../../../../.emacs.d/elpa/comment-dwim-2-20141004.333/comment-dwim-2.el"
+;;;;;;  "../../../../../../.emacs.d/elpa/comment-dwim-2-20141004.333/comment-dwim-pkg.el"
+;;;;;;  "comment-dwim-2.el") (21770 63212 538448 713000))
 
 ;;;***
 
