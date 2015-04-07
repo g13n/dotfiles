@@ -3,8 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "solarized" "solarized.el" (21792 11371 984124
-;;;;;;  284000))
+;;;### (autoloads nil "solarized" "solarized.el" (21795 28537 0 0))
 ;;; Generated autoloads from solarized.el
 
 (when (and (boundp 'custom-theme-load-path) load-file-name) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name))))
@@ -13,7 +12,7 @@
 
 ;;;### (autoloads nil nil ("solarized-dark-theme.el" "solarized-light-theme.el"
 ;;;;;;  "solarized-theme-pkg.el" "solarized-theme-utils.el" "solarized-theme.el")
-;;;;;;  (21792 11372 3747 480000))
+;;;;;;  (21795 28537 289779 0))
 
 ;;;***
 

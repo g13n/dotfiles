@@ -1,10 +1,10 @@
 ;;; json-reformat-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-
+(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads (json-reformat-region) "json-reformat" "json-reformat.el"
-;;;;;;  (21770 61923 73656 478000))
+;;;### (autoloads nil "json-reformat" "json-reformat.el" (21795 28538
+;;;;;;  0 0))
 ;;; Generated autoloads from json-reformat.el
 
 (autoload 'json-reformat-region "json-reformat" "\
@@ -18,16 +18,9 @@ and `json-reformat:pretty-string?'.
 
 ;;;***
 
-;;;### (autoloads nil nil ("json-reformat-pkg.el") (21770 61923 121904
-;;;;;;  430000))
-
-;;;***
-
-(provide 'json-reformat-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; json-reformat-autoloads.el ends here

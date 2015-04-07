@@ -1921,12 +1921,19 @@ Scala
 SCSS
 ====
 
-   • ‘scss’ (using the standard SCSS processor (http://sass-lang.com/),
-     with the following option:
+   • ‘scss-lint’ (using SCSS-Lint
+     (https://github.com/brigade/scss-lint)), or
+   • ‘scss’ (using the standard SCSS processor (http://sass-lang.com/))
 
-     ‘flycheck-scss-compass’
-          Whether to enable the Compass CSS framework in SCSS, via
-          ‘--compass’.
+   These syntax checkers provide the following options:
+
+‘flycheck-scss-compass’
+     Whether to enable the Compass CSS framework in SCSS, via
+     ‘--compass’.
+‘flycheck-scss-lintrc’
+     Configuration file for SCSS-Lint.  *Note Syntax checker
+     configuration files::, for more information about configuration
+     files.
 
 Shell scripting languages
 =========================
@@ -2573,13 +2580,13 @@ Main Index
 * Language, Sass:                        Supported languages. (line 525)
 * Language, Scala:                       Supported languages. (line 535)
 * Language, SCSS:                        Supported languages. (line 554)
-* Language, Shell scripting languages:   Supported languages. (line 564)
-* Language, Slim:                        Supported languages. (line 582)
-* Language, TeX/LaTeX:                   Supported languages. (line 587)
-* Language, Texinfo:                     Supported languages. (line 601)
-* Language, Verilog:                     Supported languages. (line 606)
-* Language, XML:                         Supported languages. (line 612)
-* Language, YAML:                        Supported languages. (line 619)
+* Language, Shell scripting languages:   Supported languages. (line 571)
+* Language, Slim:                        Supported languages. (line 589)
+* Language, TeX/LaTeX:                   Supported languages. (line 594)
+* Language, Texinfo:                     Supported languages. (line 608)
+* Language, Verilog:                     Supported languages. (line 613)
+* Language, XML:                         Supported languages. (line 619)
+* Language, YAML:                        Supported languages. (line 626)
 * Less language:                         Supported languages. (line 341)
 * Lua language:                          Supported languages. (line 346)
 * manual syntax checker selection:       Syntax checkers.     (line  39)
@@ -2600,8 +2607,8 @@ Main Index
 * Sass language:                         Supported languages. (line 525)
 * Scala language:                        Supported languages. (line 535)
 * SCSS language:                         Supported languages. (line 554)
-* Shell scripting languages language:    Supported languages. (line 564)
-* Slim language:                         Supported languages. (line 582)
+* Shell scripting languages language:    Supported languages. (line 571)
+* Slim language:                         Supported languages. (line 589)
 * syntax checker:                        Syntax checkers.     (line   6)
 * syntax checker configuration files:    Configuring checkers.
                                                               (line  43)
@@ -2611,11 +2618,11 @@ Main Index
                                                               (line  20)
 * syntax checker selection, automatic:   Syntax checkers.     (line   6)
 * syntax checker selection, manual:      Syntax checkers.     (line  39)
-* TeX/LaTeX language:                    Supported languages. (line 587)
-* Texinfo language:                      Supported languages. (line 601)
-* Verilog language:                      Supported languages. (line 606)
-* XML language:                          Supported languages. (line 612)
-* YAML language:                         Supported languages. (line 619)
+* TeX/LaTeX language:                    Supported languages. (line 594)
+* Texinfo language:                      Supported languages. (line 608)
+* Verilog language:                      Supported languages. (line 613)
+* XML language:                          Supported languages. (line 619)
+* YAML language:                         Supported languages. (line 626)
 
 
 File: flycheck.info,  Node: Key Index,  Next: Function and Variable Index,  Prev: Main Index,  Up: Top
@@ -2660,7 +2667,7 @@ Function and variable index
 * flycheck-checker:                      Syntax checkers.     (line  58)
 * flycheck-checker-error-threshold:      Reporting results.   (line  50)
 * flycheck-checkers:                     Syntax checkers.     (line  10)
-* flycheck-chktexrc:                     Supported languages. (line 595)
+* flycheck-chktexrc:                     Supported languages. (line 602)
 * flycheck-clang-args:                   Supported languages. (line  61)
 * flycheck-clang-blocks:                 Supported languages. (line  64)
 * flycheck-clang-definitions:            Supported languages. (line  66)
@@ -2764,11 +2771,12 @@ Function and variable index
 * flycheck-sass-compass:                 Supported languages. (line 529)
 * flycheck-scalastyle-jar:               Supported languages. (line 543)
 * flycheck-scalastylerc:                 Supported languages. (line 545)
-* flycheck-scss-compass:                 Supported languages. (line 558)
+* flycheck-scss-compass:                 Supported languages. (line 561)
+* flycheck-scss-lintrc:                  Supported languages. (line 564)
 * flycheck-select-checker:               Syntax checkers.     (line  43)
 * flycheck-set-checker-executable:       Configuring checkers.
                                                               (line 125)
-* flycheck-shellcheck-excluded-warnings: Supported languages. (line 577)
+* flycheck-shellcheck-excluded-warnings: Supported languages. (line 584)
 * flycheck-sphinx-warn-on-missing-references: Supported languages.
                                                               (line 467)
 * flycheck-standard-error-navigation:    Navigating errors.   (line   6)
@@ -2852,18 +2860,18 @@ Ref: language-Rust71902
 Ref: language-Sass72734
 Ref: language-Scala72987
 Ref: language-SCSS73594
-Ref: language-Shell scripting languages73886
-Ref: language-Slim74622
-Ref: language-TeX/LaTeX74699
-Ref: language-Texinfo75111
-Ref: language-Verilog75206
-Ref: language-XML75311
-Ref: language-YAML75479
-Node: Issues75618
-Node: GNU Free Documentation License76639
-Node: Main Index101986
-Node: Key Index110111
-Node: Function and Variable Index111619
+Ref: language-Shell scripting languages74154
+Ref: language-Slim74890
+Ref: language-TeX/LaTeX74967
+Ref: language-Texinfo75379
+Ref: language-Verilog75474
+Ref: language-XML75579
+Ref: language-YAML75747
+Node: Issues75886
+Node: GNU Free Documentation License76907
+Node: Main Index102254
+Node: Key Index110379
+Node: Function and Variable Index111887
 
 End Tag Table
 
