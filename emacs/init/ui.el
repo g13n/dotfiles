@@ -45,8 +45,9 @@
 ;; Ensure all contents of minibuffer visible
 (setq resize-minibuffer-mode t)
 
-;; Never blink cursor, its annoying
-(blink-cursor-mode -1)
+;; Cursor style
+(setq-default cursor-type '(bar . 1))
+(blink-cursor-mode t)
 
 ;; Set the font-size according to the screen resolution
 (if window-system
