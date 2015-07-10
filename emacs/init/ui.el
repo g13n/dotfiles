@@ -46,14 +46,15 @@
 (setq resize-minibuffer-mode t)
 
 ;; Cursor style
-(setq-default cursor-type '(bar . 1))
-(blink-cursor-mode t)
+(setq-default cursor-type 'box)
+(blink-cursor-mode -1)
 
 ;; Set the font-size according to the screen resolution
 (if window-system
     (progn
       (global-font-lock-mode t)
-      (set-default-font (font-candidate "Fira Mono-11"
+      (set-default-font (font-candidate "M+ 1m-15"
+					"Fira Mono-11"
 					"Ubuntu Mono-11"
 					"Consolas-11"
 					"Source Code Pro-12"
@@ -61,7 +62,7 @@
 					"Anonymous Pro-11"
 					"Inconsolata-13"
 					"Droid Sans Mono-12"))
-      (load-theme 'solarized-light))
+      (load-theme 'tango))
   (global-font-lock-mode nil))
 
 ;; Get rid of the menu, toolbar since I like a plain looking screen.

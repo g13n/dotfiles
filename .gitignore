@@ -9,3 +9,5 @@ projectile-bookmarks.eld
 /emacs/.#places
 /emacs/elpa/archives/gnu/archive-contents~
 /emacs/elpa/archives/melpa/archive-contents~
+emacs/eshell/
+/emacs/.emacs.desktop.lock

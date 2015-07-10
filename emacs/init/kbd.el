@@ -12,7 +12,7 @@
 (global-set-key (kbd "<f8> r") 'replace-string)
 (global-set-key (kbd "<f8> R") 'replace-regexp)
 
-(global-set-key (kbd "<f7> a") 'ack)
-
 (if (boundp 'mac-command-modifier)
     (setq mac-command-modifier 'meta))
+
+(windmove-default-keybindings)
