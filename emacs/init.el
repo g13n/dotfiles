@@ -11,9 +11,10 @@
       (package-initialize)))
 
 (load-file (expand-file-name "~/.emacs.d/init/lib.el"))
-(load-file (expand-file-name "~/.emacs.d/init/core.el"))
-(load-file (expand-file-name "~/.emacs.d/init/ui.el"))
-(load-file (expand-file-name "~/.emacs.d/init/kbd.el"))
+;; (load-file (expand-file-name "~/.emacs.d/init/core.el"))
+;; (load-file (expand-file-name "~/.emacs.d/init/ui.el"))
+;; (load-file (expand-file-name "~/.emacs.d/init/kbd.el"))
+(load-directory "~/.emacs.d/init")
 
 ;; Load custom vendor files
 (load-directory "~/.emacs.d/init/vendor")

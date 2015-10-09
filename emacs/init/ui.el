@@ -4,7 +4,6 @@
       '("-"
         mode-line-mule-info
         mode-line-modified
-        mode-line-frame-identification
         mode-line-buffer-identification
         "  "
         global-mode-string
@@ -68,7 +67,7 @@
 ;; Get rid of the menu, toolbar since I like a plain looking screen.
 ;; Lose all UI!
 (if (fboundp 'scroll-bar-mode)
-    (scroll-bar-mode -1))
+    (toggle-scroll-bar -1))
 (if (fboundp 'tool-bar-mode)
     (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode)
@@ -78,3 +77,6 @@
 ;; This is very useful for large files.
 (require 'saveplace)
 (setq-default save-place t)
+
+;; our theme
+(load-theme 'solarized-light t)
