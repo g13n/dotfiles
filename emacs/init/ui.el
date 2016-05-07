@@ -52,17 +52,9 @@
 (if window-system
     (progn
       (global-font-lock-mode t)
-      (set-default-font (font-candidate "M+ 1m-15"
-					"Fira Mono-11"
-					"Ubuntu Mono-11"
-					"Consolas-11"
-					"Source Code Pro-12"
-					"PT Mono-11"
-					"Anonymous Pro-11"
-					"Inconsolata-13"
-					"Droid Sans Mono-12"))
+      (set-default-font (font-candidate "InputMono-13:weight=Light"))
       (load-theme 'tango))
-  (global-font-lock-mode nil))
+  (global-font-lock-mode t))
 
 ;; Get rid of the menu, toolbar since I like a plain looking screen.
 ;; Lose all UI!
@@ -77,6 +69,3 @@
 ;; This is very useful for large files.
 (require 'saveplace)
 (setq-default save-place t)
-
-;; our theme
-(load-theme 'solarized-light t)

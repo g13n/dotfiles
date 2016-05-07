@@ -23,24 +23,10 @@
 (global-set-key (kbd "M-;") 'comment-dwim-2)
 (setq comment-dwim-2--inline-comment-behavior 'reindent-comment)
 
-;; Show FIXME/TODO/BUG/KLUDGE comments
-(require 'fic-mode)
-(add-hook 'c++-mode-hook 'turn-on-fic-mode)
-(add-hook 'js2-mode-hook 'turn-on-fic-mode)
-
-;; Java
-;; (defun malabar-mode-bootstrap ()
-;;   (require 'cedet)
-;;   (require 'semantic)
-;;   (load "semantic/loaddefs.el")
-;;   (semantic-mode 1);;
-;;   (require 'malabar-mode)
-;;   (load "malabar-flycheck")
-;;   (malabar-mode)
-;;   (flycheck-mode))
-
-;; (add-to-list 'auto-mode-alist
-;; 	     '("\\.java\\'" . malabar-mode-bootstrap))
+;; Required - for Ember
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+(setq create-lockfiles nil)
 
 ;; JavaScript
 (autoload 'js2-mode "js2-mode" nil t)
@@ -61,21 +47,6 @@
 (require 'js-comint)
 ;(setq inferior-js-program-command "/path/to/executable <args>")
 
-;; nXML - XML editing
-(autoload 'nxml-mode "nxml-mode")
-(add-to-list 'auto-mode-alist
-	     '("\\.\\(html\\|xml\\|xsl\\|rng\\|xhtml\\)\\'" . nxml-mode))
-(defun custom-nxml ()
-  (setq nxml-child-indent 2)
-  (setq nxml-slash-auto-complete-flag t)
-  (setq indent-tabs-mode nil)
-  (setq nxml-bind-meta-tab-to-complete-flag t)
-  (setq nxml-slash-auto-complete-flag t)
-  (unify-8859-on-decoding-mode)
-  (auto-fill-mode -1)
-  (electric-pair-mode t))
-(add-hook 'nxml-mode-hook 'custom-nxml)
-
 ;; Org Mode
 (add-to-list 'auto-mode-alist
 	     '("\\.org$" . org-mode))
@@ -93,6 +64,9 @@
 (add-to-list 'auto-mode-alist
 	     '("\\.\\(php\\|inc\\)\\'" . php-mode))
 
+;; Project modes
+(projectile-global-mode t)
+
 ;; SCSS
 (autoload 'scss-mode "scss-mode")
 (add-hook 'scss-mode-hook
@@ -107,5 +81,21 @@
 ;; Tramp - Transparent access to remote systems
 (require 'tramp)
 
-;; Project modes
-(projectile-global-mode t)
+;; Web mode - for all markups
+(autoload 'web-mode "web-mode")
+(add-to-list 'auto-mode-alist
+	     '("\\.\\(html\\|xml\\|xsl\\|xhtml\\)\\'" . web-mode))
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-comment-style 2)
+  (setq web-mode-enable-auto-pairing t)
+  (setq web-mode-enable-css-colorization t)
+  (setq web-mode-enable-block-face t)
+  (setq web-mode-enable-part-face t)
+  (setq web-mode-enable-current-element-highlight t)
+  (setq web-mode-enable-current-column-highlight t)
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
