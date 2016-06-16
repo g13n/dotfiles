@@ -52,8 +52,10 @@
 (if window-system
     (progn
       (global-font-lock-mode t)
-      (set-default-font (font-candidate "InputMono-13:weight=Light"))
-      (load-theme 'tango))
+      (set-frame-font (font-candidate "Fira Code-13:weight=light"
+				      "Fira Mono-13:weight=light"))
+      (load-theme 'base16-tomorrow-night t)
+      )
   (global-font-lock-mode t))
 
 ;; Get rid of the menu, toolbar since I like a plain looking screen.

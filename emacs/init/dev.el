@@ -35,17 +35,14 @@
 (add-hook 'js2-mode-hook
           (lambda ()
 	    (setq indent-tabs-mode nil
-		  js2-basic-offset 2)
+		  js2-bounce-indent-p t
+		  js2-basic-offset 4)
 	    (local-set-key "\C-x\C-e" 'js-send-last-sexp)
 	    (local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
 	    (local-set-key "\C-cb" 'js-send-buffer)
 	    (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
 	    (local-set-key "\C-cl" 'js-load-file-and-go)
 	    ))
-
-;; JS comint
-(require 'js-comint)
-;(setq inferior-js-program-command "/path/to/executable <args>")
 
 ;; Org Mode
 (add-to-list 'auto-mode-alist
@@ -87,10 +84,10 @@
 	     '("\\.\\(html\\|xml\\|xsl\\|xhtml\\)\\'" . web-mode))
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2)
-  (setq web-mode-comment-style 2)
+  (setq web-mode-markup-indent-offset 4)
+  (setq web-mode-css-indent-offset 4)
+  (setq web-mode-code-indent-offset 4)
+  (setq web-mode-comment-style 4)
   (setq web-mode-enable-auto-pairing t)
   (setq web-mode-enable-css-colorization t)
   (setq web-mode-enable-block-face t)
