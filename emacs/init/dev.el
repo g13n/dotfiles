@@ -1,5 +1,12 @@
 ;; setup some tools
 
+;; http://www.flycheck.org/manual/latest/index.html
+(require 'flycheck)
+;; turn on flychecking globally
+(add-hook 'after-init-hook #'global-flycheck-mode)
+;; customize flycheck temp file prefix
+(setq-default flycheck-temp-prefix ".flycheck")
+
 (add-to-list 'load-path
 	     (expand-file-name "~/.emacs.d/utils"))
 
@@ -11,13 +18,6 @@
 (add-hook 'c-mode-common-hook
 	  #'(lambda ()
 	      (electric-pair-mode t)))
-(eval-after-load 'flycheck
-  '((progn )
-    (require 'flycheck-google-cpplint)
-    ;; Add Google C++ Style checker.
-    ;; In default, syntax checked by Clang and Cppcheck.
-    (flycheck-add-next-checker 'c/c++-cppcheck
-			       '(warnings-only . c/c++-googlelint))))
 
 ;; Comments
 (global-set-key (kbd "M-;") 'comment-dwim-2)
@@ -29,6 +29,8 @@
 (setq create-lockfiles nil)
 
 ;; JavaScript
+(require 'nvm)
+(nvm-use "6.3.1")
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist
 	     '("\\.\\(js\\|jsx\\)\\'" . js2-mode))
@@ -84,11 +86,11 @@
   (tide-setup)
   (flycheck-mode +1)
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (eldoc-mode +1)
+  (eldoc-mode +1))
   ;; company is an optional dependency. You have to
   ;; install it separately via package-install
   ;; `M-x package-install [ret] company`
-  (company-mode +1))
+  ;; (company-mode +1))
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
