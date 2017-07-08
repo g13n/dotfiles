@@ -29,8 +29,6 @@
 (setq create-lockfiles nil)
 
 ;; JavaScript
-(require 'nvm)
-(nvm-use "6.3.1")
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist
 	     '("\\.\\(js\\|jsx\\)\\'" . js2-mode))
@@ -38,7 +36,7 @@
           (lambda ()
 	    (setq indent-tabs-mode nil
 		  js2-bounce-indent-p t
-		  js2-basic-offset 4)
+		  js2-basic-offset 2)
 	    (local-set-key "\C-x\C-e" 'js-send-last-sexp)
 	    (local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
 	    (local-set-key "\C-cb" 'js-send-buffer)

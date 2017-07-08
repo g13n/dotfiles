@@ -46,15 +46,14 @@
 
 ;; Cursor style
 (setq-default cursor-type 'box)
-(blink-cursor-mode -1)
+(blink-cursor-mode t)
 
 ;; Set the font-size according to the screen resolution
 (if window-system
     (progn
       (global-font-lock-mode t)
-      (set-frame-font (font-candidate "Fira Code-13:weight=light"
-				      "Fira Mono-13:weight=light"))
-      (load-theme 'base16-tomorrow-night t)
+      (set-frame-font (font-candidate "Go Mono for Powerline-14"))
+      (load-theme 'base16-eighties t)
       )
   (global-font-lock-mode t))
 
